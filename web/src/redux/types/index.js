@@ -1,0 +1,2 @@
+export const CONSOLE_TEST = 'CONSOLE_TEST'
+export const CONSOLE_TEST_START = 'CONSOLE_TEST_START'
