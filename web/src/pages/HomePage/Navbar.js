@@ -5,7 +5,7 @@ const Navbar = () => {
         style={{
           padding: '1px 8px 0 6px',
         }}
-        className="logoContainer flex border border-transparent hover:border-white"
+        className="logoContainer flex border border-transparent cursor-pointer hover:border-white"
       >
         <div
           style={{
@@ -31,7 +31,7 @@ const Navbar = () => {
           padding: '5px 9px 5px 9px',
           // margin: '5px 2px 5px 0',
         }}
-        className="nav-global-location-slot flex border border-transparent hover:border-white"
+        className="nav-global-location-slot flex border border-transparent cursor-pointer hover:border-white"
       >
         <div
           style={{
