@@ -11,3 +11,10 @@
 /**
  * END --- TAILWIND GENERATOR EDIT
  */
+
+
+@media (max-width: 1024px) {
+  #Cart {
+    display: none;
+  }
+}

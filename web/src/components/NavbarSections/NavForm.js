@@ -2,6 +2,7 @@ export const NavForm = () => {
   return (
     <div
       style={{
+        // minWidth: '360px',
         padding: '5px 4px 10px 3px',
         // height: '60px',
         whiteSpace: 'nowrap',
@@ -83,8 +84,9 @@ export const NavForm = () => {
         <div
           className="nav-fill bg-white flex-grow h-full"
           style={{
-            minWidth: '300px',
-            maxWidth: '700px',
+            minWidth: '305px',
+            // maxWidth: '700px',
+            padding: '7px 10px 10px 0',
           }}
         ></div>
         <div
