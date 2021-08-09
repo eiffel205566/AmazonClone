@@ -9,7 +9,7 @@ import {
   take,
 } from 'redux-saga/effects'
 import { updateBackground } from '../actions'
-import { CONSOLE_TEST_START } from '../types'
+import { CONSOLE_TEST_START, SINGNIN_HOVER } from '../types'
 
 export function* consoleTestWatcher() {
   yield takeEvery(CONSOLE_TEST_START, consoleTestWorker)

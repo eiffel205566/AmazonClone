@@ -1,8 +1,9 @@
-import { CONSOLE_TEST } from '../types'
+import { CONSOLE_TEST, SINGNIN_HOVER } from '../types'
 
 const initialState = {
   placeholder: null,
   background: 'dark',
+  signInHover: false,
 }
 
 const rootReducer = (state = initialState, action) => {
