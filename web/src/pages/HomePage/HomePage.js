@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import { OverlayBackgroundContext } from 'src/components/ContextApi/index'
 import { useState } from 'react'
+import NavMain from 'src/components/NavMain/NavMain'
 
 const HomePageOrigin = (props) => {
   const { background, updateBackgroundStart } = props
@@ -14,8 +15,9 @@ const HomePageOrigin = (props) => {
     <>
       <OverlayBackgroundContext.Provider value={[overlay, setOverlay]}>
         <Navbar />
+        <NavMain />
       </OverlayBackgroundContext.Provider>
-      <div
+      {/* <div
         onClick={(e) => {
           e.preventDefault()
           updateBackgroundStart()
@@ -26,7 +28,7 @@ const HomePageOrigin = (props) => {
       >
         AmazonClone
       </div>
-      {overlay.isOverlay && <div className="h-screen w-screen bg-gray-300 z-30 "></div>}
+      {overlay.isOverlay && <div className="h-screen w-screen bg-gray-300 z-30 "></div>} */}
     </>
   )
 }
