@@ -1,8 +1,14 @@
-import { CONSOLE_TEST, CONSOLE_TEST_START } from '../types'
+import {
+  CONSOLE_TEST,
+  CONSOLE_TEST_START,
+  SET_SIDEBAROVERLAY,
+  SET_SIDEBAROVERLAY_START,
+} from '../types'
 //mapPropsToState
 export const select = (state) => {
   return {
     background: state?.rootReducer.background,
+    sidebarOverlay: state?.rootReducer.sidebarOverlay,
   }
 }
 
@@ -13,4 +19,13 @@ export const updateBackgroundStart = () => {
 
 export const updateBackground = () => {
   return { type: CONSOLE_TEST }
+}
+
+export const setSidebarOverlayStart = () => {
+  console.log('setting background start')
+  return { type: SET_SIDEBAROVERLAY_START }
+}
+
+export const setSidebarOverlay = () => {
+  return { type: SET_SIDEBAROVERLAY }
 }

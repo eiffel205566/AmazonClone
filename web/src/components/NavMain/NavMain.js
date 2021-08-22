@@ -1,4 +1,9 @@
-const NavMain = () => {
+import { select, setSidebarOverlayStart } from 'src/redux/actions/index'
+import { connect } from 'react-redux'
+
+const NavMainOrigin = (props) => {
+  const { setSidebarOverlayStart } = props
+
   return (
     <div
       className="nav-main"
@@ -35,7 +40,9 @@ const NavMain = () => {
               backgroundRepeat: 'repeat-x',
             }}
           ></div>
+          {/* eslint-disable */}
           <div
+            onClick={() => setSidebarOverlayStart()}
             style={{
               color: '#fff',
               fontWeight: '700',
@@ -46,10 +53,13 @@ const NavMain = () => {
           >
             All
           </div>
+          {/* eslint-enable */}
         </div>
       </div>
     </div>
   )
 }
+
+const NavMain = connect(select, { setSidebarOverlayStart })(NavMainOrigin)
 
 export default NavMain
