@@ -1,6 +1,7 @@
 import { select } from 'src/redux/actions/index'
 import { connect } from 'react-redux'
 import { setSidebarOverlay } from 'src/redux/actions/index'
+import NavList from 'src/components/NavContent/NavList'
 
 const SidebarOverlayOrigin = (props) => {
   const { sidebarOverlay, setSidebarOverlay } = props
@@ -11,13 +12,14 @@ const SidebarOverlayOrigin = (props) => {
       id="sidebarMainContainer"
       onClick={(e) => {
         e.stopPropagation()
-        if (e.target?.id === 'sidebarMainContainer') {
+        if (['sidebarMainContainer', 'nav-sprite'].includes(e.target?.id)) {
           setSidebarOverlay()
         }
       }}
       style={{
         backgroundColor: 'rgba(0,0,0,.8)',
         opacity: '1',
+        overflowY: 'hidden',
       }}
       className={`${
         sidebarOverlay ? 'block' : 'hidden'
@@ -38,49 +40,52 @@ const SidebarOverlayOrigin = (props) => {
           alignItems:'center',
         }}
       >
-      {/* head icon */}
-      <div
-        id="hmenu-customer-avatar-icon"
-        style={{
-          height:"25px",
-          width:'27px',
-          margin:'0 10px 0 36px',
-          backgroundPosition:'-137px -340px',
-          backgroundImage:'url(https://images-na.ssl-images-amazon.com/images/G/15/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936603_.png)',
-          color:"#007185",
-          fontSize:'14px',
-          lineHeight:'20px',
-        }}
-      >
-      </div>
-
-      {/* Sign in message */}
-      <div
-        id='hmenu-customer-profile-right'
-        style={{
-          display:'flex',
-          flex:"1",
-          overflow:'hidden',
-          fontSize:"14px",
-          lineHeight:'20px',
-        }}
-      >
-        <b
+        {/* head icon */}
+        <div
+          id="hmenu-customer-avatar-icon"
           style={{
-            whiteSpace:'nowrap',
-            fontSize:'19px',
-            lineHeight:'25px',
-            color:'#fff',
-            fontWeight:'700'
+            height:"25px",
+            width:'27px',
+            margin:'0 10px 0 36px',
+            backgroundPosition:'-137px -340px',
+            backgroundImage:'url(https://images-na.ssl-images-amazon.com/images/G/15/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936603_.png)',
+            color:"#007185",
+            fontSize:'14px',
+            lineHeight:'20px',
           }}
         >
-          Hello, Sign in
-        </b>
+        </div>
+
+        {/* Sign in message */}
+        <div
+          id='hmenu-customer-profile-right'
+          style={{
+            display:'flex',
+            flex:"1",
+            overflow:'hidden',
+            fontSize:"14px",
+            lineHeight:'20px',
+          }}
+        >
+          <b
+            style={{
+              whiteSpace:'nowrap',
+              fontSize:'19px',
+              lineHeight:'25px',
+              color:'#fff',
+              fontWeight:'700'
+            }}
+          >
+            Hello, Sign in
+          </b>
+        </div>
       </div>
-      </div>
+      {/* Sidebar content */}
+      <NavList />
     </div>
 
-    {/* eslint-enable */}
+      {/* eslint-enable */}
+      {/* the close button */}
       <div
         style={{
           width: '20px',
@@ -94,6 +99,7 @@ const SidebarOverlayOrigin = (props) => {
             'url(https://images-na.ssl-images-amazon.com/images/G/15/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936603_.png)',
           backgroundRepeat: 'repeat-x',
         }}
+        id="nav-sprite"
         className="nav-sprite hmenu-close-icon"
       ></div>
     </div>

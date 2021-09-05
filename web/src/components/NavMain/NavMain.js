@@ -17,7 +17,9 @@ const NavMainOrigin = (props) => {
       }}
     >
       <div className="nav-left">
+        {/* eslint-disable */}
         <div
+          onClick={() => setSidebarOverlayStart()}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -40,9 +42,7 @@ const NavMainOrigin = (props) => {
               backgroundRepeat: 'repeat-x',
             }}
           ></div>
-          {/* eslint-disable */}
           <div
-            onClick={() => setSidebarOverlayStart()}
             style={{
               color: '#fff',
               fontWeight: '700',
