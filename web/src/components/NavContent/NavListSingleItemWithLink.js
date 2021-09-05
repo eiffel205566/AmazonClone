@@ -1,6 +1,7 @@
 const NavListSingleItemWithLink = (props) => {
   return (
     <li
+      className="hover:bg-gray-200"
       style={{
         listStyle: 'none',
         paddingBottom: '2px',
