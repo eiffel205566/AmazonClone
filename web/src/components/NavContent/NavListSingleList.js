@@ -10,6 +10,7 @@ const NavListSingleList = () => {
         paddingTop: '7px',
         paddingBottom: '30px',
         margin: '0',
+        width: '365px',
         // position: 'absolute',
         // right: '0',
         // left: '0',

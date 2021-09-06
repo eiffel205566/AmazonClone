@@ -20,18 +20,6 @@ const HomePageOrigin = (props) => {
         <NavMain />
         <SidebarOverlay />
       </OverlayBackgroundContext.Provider>
-      {/* <div
-        onClick={(e) => {
-          e.preventDefault()
-          updateBackgroundStart()
-        }}
-        className={`bg-${
-          background === 'dark' ? 'gray' : 'green'
-        }-300 w-40 select-none border hover:border-gray-300 cursor-pointer`}
-      >
-        AmazonClone
-      </div>
-      {overlay.isOverlay && <div className="h-screen w-screen bg-gray-300 z-30 "></div>} */}
     </>
   )
 }

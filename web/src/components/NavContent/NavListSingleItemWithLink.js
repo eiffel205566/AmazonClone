@@ -1,6 +1,18 @@
-const NavListSingleItemWithLink = (props) => {
+import { select, setSecondLevelMenu } from 'src/redux/actions/index'
+import { connect } from 'react-redux'
+
+const NavListSingleItemWithLinkOrigin = (props) => {
+  const { setSecondLevelMenu } = props || {}
+  /* eslint-disable */
   return (
     <li
+      onClick={
+        setSecondLevelMenu
+          ? () => {
+              setSecondLevelMenu()
+            }
+          : () => {}
+      }
       className="hover:bg-gray-200"
       style={{
         listStyle: 'none',
@@ -48,5 +60,9 @@ const NavListSingleItemWithLink = (props) => {
     </li>
   )
 }
+
+const NavListSingleItemWithLink = connect(select, { setSecondLevelMenu })(
+  NavListSingleItemWithLinkOrigin
+)
 
 export default NavListSingleItemWithLink

@@ -1,6 +1,9 @@
 import NavListSingleList from './NavListSingleList'
+import { select, setSecondLevelMenu } from 'src/redux/actions/index'
+import { connect } from 'react-redux'
 
-const NavList = () => {
+const NavListOrigin = (props) => {
+  const { setSecondLevelMenu, secondLevelMenu } = props
   return (
     <div
       className="flex"
@@ -19,13 +22,17 @@ const NavList = () => {
           top: '0',
           bottom: '0',
         }}
-        className="myHmenuContainer w-screen flex transform transition-all duration-500 translate-x-1/2"
+        className={`myHmenuContainer w-screen flex transform transition-all duration-500 -translate-x-${
+          secondLevelMenu ? '1' : '0'
+        }/2`}
       >
-        <NavListSingleList />
+        <NavListSingleList setSecondLevelMenu={setSecondLevelMenu} />
         <NavListSingleList />
       </div>
     </div>
   )
 }
+
+const NavList = connect(select, { setSecondLevelMenu })(NavListOrigin)
 
 export default NavList

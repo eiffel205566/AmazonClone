@@ -3,12 +3,15 @@ import {
   CONSOLE_TEST_START,
   SET_SIDEBAROVERLAY,
   SET_SIDEBAROVERLAY_START,
+  SET_SECONDLEVELMENU,
+  SET_SECONDLEVELMENU_START,
 } from '../types'
 //mapPropsToState
 export const select = (state) => {
   return {
     background: state?.rootReducer.background,
     sidebarOverlay: state?.rootReducer.sidebarOverlay,
+    secondLevelMenu: state?.rootReducer.secondLevelMenu,
   }
 }
 
@@ -28,4 +31,10 @@ export const setSidebarOverlayStart = () => {
 
 export const setSidebarOverlay = () => {
   return { type: SET_SIDEBAROVERLAY }
+}
+
+export const setSecondLevelMenu = () => {
+  return {
+    type: SET_SECONDLEVELMENU_START,
+  }
 }

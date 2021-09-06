@@ -14,10 +14,28 @@ import {
   SINGNIN_HOVER,
   SET_SIDEBAROVERLAY,
   SET_SIDEBAROVERLAY_START,
+  SET_SECONDLEVELMENU,
+  SET_SECONDLEVELMENU_START,
 } from '../types'
 
 export function* consoleTestWatcher() {
   yield takeEvery(CONSOLE_TEST_START, consoleTestWorker)
+}
+
+export function* secondLevelMenuWatcher() {
+  yield takeEvery(SET_SECONDLEVELMENU_START, secondLevelMenuWorker)
+}
+
+function* secondLevelMenuWorker() {
+  try {
+    yield put(
+      (() => {
+        return { type: SET_SECONDLEVELMENU }
+      })()
+    )
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 function* consoleTestWorker() {
@@ -47,7 +65,11 @@ function* sidebarOverlayWorker() {
 }
 
 export function* rootSaga() {
-  const sagas = [consoleTestWatcher, sidebarOverlayWatcher]
+  const sagas = [
+    consoleTestWatcher,
+    sidebarOverlayWatcher,
+    secondLevelMenuWatcher,
+  ]
 
   yield all(
     sagas.map((saga) =>
