@@ -2,6 +2,27 @@
   "name": "web",
   "version": "0.0.0",
   "private": true,
+  "workspaces": [
+    "material-symbols",
+    "font",
+    "font/font",
+    "font/100",
+    "font/200",
+    "font/300",
+    "font/400",
+    "font/500",
+    "font/600",
+    "font/700",
+    "svg",
+    "svg/100",
+    "svg/200",
+    "svg/300",
+    "svg/400",
+    "svg/500",
+    "svg/600",
+    "svg/700",
+    "metadata"
+  ],
   "browserslist": {
     "development": [
       "last 1 version"
@@ -11,6 +32,10 @@
       "not IE 11",
       "not IE_Mob 11"
     ]
+  },
+  "scripts": {
+    "generate": "npm run generate:types && npm run copy:types",
+    "generate:types": "npx @material-design-icons/scripts generate types --in ./"
   },
   "dependencies": {
     "@redwoodjs/forms": "0.35.2",
@@ -25,6 +50,7 @@
   "devDependencies": {
     "autoprefixer": "9.8.6",
     "postcss-loader": "4.0.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "@material-design-icons/scripts": "0.5.2"
   }
 }
