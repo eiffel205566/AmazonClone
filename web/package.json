@@ -34,8 +34,10 @@
     ]
   },
   "scripts": {
+    "retype": "node ./src/script/retype.js",
     "generate": "npm run generate:types && npm run copy:types",
-    "generate:types": "npx @material-design-icons/scripts generate types --in ./"
+    "generate:types": "npx @material-design-icons/scripts generate types --in ./",
+    "postinstall": "npm run generate:types && npm run retype"
   },
   "dependencies": {
     "@redwoodjs/forms": "0.35.2",
